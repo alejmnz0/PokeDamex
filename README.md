@@ -1,0 +1,2 @@
+# PokeDamex
+Aplicación de Pokemon.
