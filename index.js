@@ -35,5 +35,22 @@ $(document).ready(function () {
         })
     })
 
+    $(document).on('click', '.btn-view-pokemon', function () {
+        var pokemonId = $(this).attr('itemid');
+        $.ajax({
+            url: `https://pokeapi.co/api/v2/pokemon/${pokemonId}`,
+            type: 'GET',
+        }).done(function (response) {
+            //busca y guanda el tipo del pokemon
+            specie1 = response.types[0].type.name;
+
+            $('#modal_title').text(response.name);
+
+            // Lo último es abrir el modal
+            $('#pokemon_detail_modal').modal('show');
+        });
+
+    });
+
 
 })
