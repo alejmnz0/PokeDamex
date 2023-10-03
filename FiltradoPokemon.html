@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
 
 <body>
@@ -20,55 +21,25 @@
                 <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
                     <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
                         id="menu">
-                        <li>
+                        <li class="mt-3">
                             <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                                <span class="ms-1 d-none d-sm-inline link-light">Dashboard</span> </a>
-                            <ul class="collapse nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
-                                <li class="w-100">
-                                    <a href="#" class="nav-link link-light"> <span
-                                            class="d-none d-sm-inline">Item</span> 1
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="nav-link link-light"> <span
-                                            class="d-none d-sm-inline">Item</span> 2
-                                    </a>
-                                </li>
+                                <span class="ms-1 d-none d-sm-inline link-light"><i class="bi bi-caret-down-fill"></i>
+                                    Types</span> </a>
+                            <ul class="collapse nav ms-1 small" id="submenu1" data-bs-parent="#menu">
+
                             </ul>
                         </li>
                         <li>
                             <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                                <i class="fs-4 bi-grid"></i> <span
-                                    class="ms-1 d-none d-sm-inline link-light">Products</span> </a>
-                            <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
-                                <li class="w-100">
-                                    <a href="#" class="nav-link link-light"> <span
-                                            class="d-none d-sm-inline">Product</span>
-                                        1</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="nav-link link-light"> <span
-                                            class="d-none d-sm-inline">Product</span>
-                                        2</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="nav-link link-light"> <span
-                                            class="d-none d-sm-inline">Product</span>
-                                        3</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="nav-link link-light"> <span
-                                            class="d-none d-sm-inline">Product</span>
-                                        4</a>
-                                </li>
+                                <span class="ms-1 d-none d-sm-inline link-light"><i class="bi bi-caret-down-fill"></i>
+                                    Generation</span> </a>
+                            <ul class="collapse nav ms-1 small" id="submenu2" data-bs-parent="#menu">
+
                             </ul>
                         </li>
                     </ul>
                     <hr>
                 </div>
-            </div>
-            <div class="col py-3">
-                Content area...
             </div>
         </div>
     </div>
@@ -78,6 +49,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
+    <script src="FiltradoPokemon.js"></script>
 </body>
 
 </html>
