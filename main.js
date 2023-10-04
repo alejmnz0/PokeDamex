@@ -42,15 +42,25 @@ $(document).ready(function () {
             type: 'GET',
         }).done(function (response) {
             //busca y guanda el tipo del pokemon
-            specie1 = response.types[0].type.name;
+            //specie1 = response.types[0].type.name;
 
-            $('#modal_title').text(response.name);
+            $('#pokemon_name').text(response.name);
 
+            $('#sprite').attr("src", response.sprites.front_default);
             // Lo último es abrir el modal
             $('#pokemon_detail_modal').modal('show');
         });
 
     });
 
+    $(document).on('click', '.btn-view-pokemon', function () {
+        var pokemonId = $(this).attr('itemid');
+        $.ajax({
+            url: `https://pokeapi.co/api/v2/pokemon-species/${pokemonId}/`,
+            type: 'GET',
+        }).done(function (response) {
+            //BUscar en flavor text entries la descripcion
+        });
 
-})
+    });
+});
