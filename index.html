@@ -14,8 +14,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 
-<body>
-    <nav class="navbar navbar-expand-lg" style="font-family: 'Press Start 2P'; background-color: rgb(230, 0, 0);">
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg sticky-top"
+        style="font-family: 'Press Start 2P'; background-color: rgb(230, 0, 0);">
         <div class="container-fluid">
             <a class="navbar-brand text-light fw-bold" href="#"><img
                     src="https://i.pinimg.com/originals/32/eb/23/32eb230b326ee3c76e64f619a06f6ebb.png" alt="Pokeball"
@@ -50,7 +51,8 @@
     <div class="container-fluid" style="font-family: 'Press Start 2P';">
         <div class="row flex-nowrap">
             <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
-                <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                <div
+                    class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100 sticky-top">
                     <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
                         id="menu">
                         <li class="mt-3">
@@ -73,11 +75,13 @@
                     <hr>
                 </div>
             </div>
+            <div class="col-10 row mx-5" id="lista-personajes">
+            </div>
         </div>
+
     </div>
 
-    <div class="col-10 row" id="lista-personajes">
-    </div>
+
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>

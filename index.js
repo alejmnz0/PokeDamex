@@ -15,8 +15,8 @@ $(document).ready(function () {
             </a>
             </li>`;
             $('#submenu1').append(template);
-        })
-    })
+        });
+    });
 
     $.ajax({
         url: 'https://pokeapi.co/api/v2/generation',
@@ -32,30 +32,36 @@ $(document).ready(function () {
             </a>
             </li>`;
             $('#submenu2').append(template);
-        })
-    })
+        });
+    });
 
     $.ajax({
-        url: 'https://pokeapi.co/api/v2/pokemon',
+        url: 'https://pokeapi.co/api/v2/pokemon?limit=500',
         type: 'GET'
     }).done(function (resp) {
         var listaPokemon = resp.results;
         listaPokemon.forEach(function (pok) {
 
-            var template = `
-            <div class="col-auto mx-2">
-                <div class="card bg-dark text-light mt-5" style="width: 18rem;">
-                    <img class="card-img-top" src="https://starwars-visualguide.com/assets/img/characters/1.jpg"
-                        alt="Card image cap">
-                    <div class="card-body row">
-                        <h4 class="card-title col-9">${pok.name}</h4>
+            $.ajax({
+                url: pok.url,
+                type: 'GET'
+            }).done(function (resp) {
+                var template = `
+                    <div class="col-auto mx-2">
+                        <div class="card bg-dark text-light mt-5" style="width: 18rem;">
+                        <p class="mx-4">Nº-${resp.id}</p>
+                            <img class="card-img-top" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${resp.id}.png"
+                                alt="Card image cap">
+                            <div class="card-body row">
+                                <h6 class="card-title col-9">${pok.name}</h6>
+                                <img src="img/${resp.types.type[0]}.png">
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            `;
-            $('#submenu2').append(template);
-        })
-    })
+                    `;
+                $('#lista-personajes').append(template);
+            });
+        });
+    });
 
-
-})
+});
