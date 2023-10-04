@@ -79,21 +79,55 @@
                 </div>
             </div>
         </aside>
+
         <main>
-            <button class="btn btn-primary btn-view-pokemon" itemid="2">View Pokémon</button>
+            <button class="btn btn-primary btn-view-pokemon" itemid="14">View Pokémon</button>
             <!-- Modal -->
             <div class="modal fade" style="font-family: 'Press Start 2P'" ; id="pokemon_detail_modal" tabindex="-1"
                 aria-labelledby="pokemon_detail_modal_label" aria-hidden="true">
-                <div class="modal-dialog">
+                <div class="modal-dialog modal-lg">
                     <div class="modal-content">
-                        <div class="modal-header bg-secondary m-3">
-                            <img id="sprite" src="" alt="PokemonSprite"></img>
-                            <h1 class="modal-title" id="pokemon_name"></h1>
-                            <p id="descripcion"></p>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <div class="modal-header m-3 mb-0 rounded" style="background-color: rgb(188, 188, 188);">
+                            <div class="d-flex">
+                                <div class="col-md-4" style=" max-width: 200px; max-height: 150px; margin-left: 20px;">
+                                    <img id="sprite" src="" alt="PokemonSprite"
+                                        style="position: relative; left: -50px; top: -25px; width: 220px;"></img>
+                                </div>
+                                <div class="col-md-8">
+                                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" -->
+                                    <!-- aria-label="Close"></button> -->
+                                    <h1 class="modal-title mb-2" id="pokemon_name"></h1>
+                                    <p id="descripcion"></p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="modal-body">
-                            <p id="pokemon_name"></p>
+                        <div class="modal-body d-flex">
+                            <div class="rounded flex-grow-1 p-3"
+                                style="background-color: rgb(188, 188, 188); margin-right: 10px;">
+                                <div class="d-flex">
+                                    <i class="bi bi-question"></i>
+                                    <h4>Attack</h4>
+                                </div>
+                                <div class="progress">
+                                    <div id="attack" class="progress-bar bg-danger" role="progressbar"
+                                        aria-label="Example with label" style="width: 100%;" aria-valuemin="0"
+                                        aria-valuemax="100">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rounded flex-grow-1 p-3"
+                                style="background-color: rgb(188, 188, 188); margin-left: 10px;">
+                                <div class="d-flex">
+                                    <i class="bi bi-question"></i>
+                                    <h4>Defense</h4>
+                                </div>
+                                <div class="progress">
+                                    <div id="defense" class="progress-bar bg-primary" role="progressbar"
+                                        aria-label="Example with label" style="width: 100%;" aria-valuemin="0"
+                                        aria-valuemax="100">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

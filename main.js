@@ -47,6 +47,18 @@ $(document).ready(function () {
             $('#pokemon_name').text(response.name);
 
             $('#sprite').attr("src", response.sprites.front_default);
+
+
+            $("#attack").text(response.stats[1].base_stat);
+            //Hace que la barra trabaje con valores de 0 a 200
+            var width = (response.stats[1].base_stat / 200) * 100;
+            $("#attack").css("width", width + "%");
+
+            $("#defense").text(response.stats[2].base_stat);
+            var width = (response.stats[2].base_stat / 200) * 100;
+            $("#defense").css("width", width + "%");
+
+
             // Lo último es abrir el modal
             $('#pokemon_detail_modal').modal('show');
         });
@@ -56,11 +68,10 @@ $(document).ready(function () {
     $(document).on('click', '.btn-view-pokemon', function () {
         var pokemonId = $(this).attr('itemid');
         $.ajax({
-            url: `https://pokeapi.co/api/v2/pokemon-species/${pokemonId}/`,
+            url: `https://pokeapi.co/api/v2/pokemon-species/${pokemonId}`,
             type: 'GET',
         }).done(function (response) {
-            //BUscar en flavor text entries la descripcion
+            $('#descripcion').text(response.flavor_text_entries[0].flavor_text);
         });
-
     });
 });
