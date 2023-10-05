@@ -67,8 +67,11 @@ $(document).ready(function () {
             var width = (response.stats[5].base_stat / 200) * 100;
             $("#speed").css("width", width + "%");
 
+            $("#SpecialAct").text(response.stats[3].base_stat);
+            $("#SpecialAct").css("width", response.stats[3].base_stat + "%");
 
-
+            $("#SpecialDef").text(response.stats[4].base_stat);
+            $("#SpecialDef").css("width", response.stats[4].base_stat + "%");
 
             // Lo último es abrir el modal
             $('#pokemon_detail_modal').modal('show');
