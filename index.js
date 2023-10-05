@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+    var limit = 20;
+
     console.log("hola")
     $.ajax({
         url: 'https://pokeapi.co/api/v2/type',
@@ -46,20 +48,39 @@ $(document).ready(function () {
                 url: pok.url,
                 type: 'GET'
             }).done(function (resp) {
-                var template = `
+                var template;
+
+                resp.types.length == 2
+                    ? template = `
                     <div class="col-auto mx-2">
-                        <div class="card bg-dark text-light mt-5" style="width: 18rem;">
+                        <div class="card text-dark mt-5" style="width: 18rem; background-color: #ECECEC;">
                         <p class="mx-4">Nº-${resp.id}</p>
                             <img class="card-img-top" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${resp.id}.png"
                                 alt="Card image cap">
-                            <div class="card-body row">
+                            <div class="card-body row m-0" style="background-color: #B2B2B2">
                                 <h6 class="card-title col-9">${pok.name}</h6>
-                                <img src="img/${resp.types.type[0]}.png">
+                                <img class="col-4" src="img/${resp.types[0].type.name}.png" height="20" width="47" alt="pokemon type">
+                                <img class="col-4" src="img/${resp.types[1].type.name}.png" height="20" width="47" alt="pokemon type">
                             </div>
                         </div>
                     </div>
-                    `;
+                    `
+                    : template = `
+                <div class="col-auto mx-2">
+                <div class="card text-dark mt-5" style="width: 18rem; background-color: #ECECEC;">
+                    <p class="mx-4">Nº-${resp.id}</p>
+                        <img class="card-img-top" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${resp.id}.png"
+                            alt="Card image cap">
+                            <div class="card-body row m-0" style="background-color: #B2B2B2">
+                            <h6 class="card-title col-9">${pok.name}</h6>
+                            <img class="col-4" src="img/${resp.types[0].type.name}.png" height="20" width="47" alt="pokemon type">
+                        </div>
+                    </div>
+                </div>
+                `
+
                 $('#lista-personajes').append(template);
+
             });
         });
     });
