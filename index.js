@@ -1,8 +1,10 @@
 $(document).ready(function () {
 
     var limit = 20;
+    var offset = 0;
+    var pokemons = 1292;
+    var paginas = Math.ceil(1292 / 20);
 
-    console.log("hola")
     $.ajax({
         url: 'https://pokeapi.co/api/v2/type',
         type: 'GET'
@@ -38,7 +40,7 @@ $(document).ready(function () {
     });
 
     $.ajax({
-        url: 'https://pokeapi.co/api/v2/pokemon?limit=500',
+        url: 'https://pokeapi.co/api/v2/pokemon?limit=20',
         type: 'GET'
     }).done(function (resp) {
         var listaPokemon = resp.results;
@@ -143,6 +145,11 @@ $(document).ready(function () {
         }).done(function (response) {
             $('#descripcion').text(response.flavor_text_entries[0].flavor_text);
         });
+    });
+
+    $(document).on('click', '.page-link', function () {
+        $('').addClass("bg-black")
+
     });
 
 
