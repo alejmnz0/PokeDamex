@@ -53,15 +53,7 @@
             <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
                 <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
                     <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
-                        id="menu">
-                        <li class="mt-3">
-                            <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                                <span class="ms-1 d-none d-sm-inline link-light"><i class="bi bi-caret-down-fill"></i>
-                                    Types</span> </a>
-                            <ul class="collapse nav ms-1 small" id="submenu1" data-bs-parent="#menu">
-
-                            </ul>
-                        </li>
+                        id="menu" style="position: fixed;">
                         <li>
                             <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
                                 <span class="ms-1 d-none d-sm-inline link-light"><i class="bi bi-caret-down-fill"></i>
@@ -74,7 +66,22 @@
                     <hr>
                 </div>
             </div>
-            <div class="col-10 row justify-content-center" id="lista-items">
+            <div class="col-10 row justify-content-center">
+                <div class="row justify-content-center" id="lista-items">
+
+                </div>
+                <nav class="z-1 mt-3" aria-label="...">
+                    <div>
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item d-none" id="primera"><a class="page-link" href="#">&#60;&#60;</a></li>
+                            <ul class="pagination justify-content-center" id="pagination">
+                            </ul>
+                            <li class="page-item" id="ultima"><a class="page-link" href="#">&#62;&#62;</a></li>
+                        </ul>
+                        
+                    </div>
+                    
+                </nav>
             </div>
         </div>
 

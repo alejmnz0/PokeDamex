@@ -192,7 +192,6 @@ $(document).ready(function () {
             $('#primera').removeClass('d-none');
         }
 
-    // Mostrar u ocultar botón "Última"
         if (actualPage === paginas) {
             $('#ultima').addClass('d-none');
         } else {
