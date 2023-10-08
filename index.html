@@ -79,13 +79,16 @@
 
                 </div>
                 <nav class="z-1 mt-3" aria-label="...">
-                    <ul class="pagination justify-content-center">
-                        <li class="page-item"><a class="page-link" href="#">&#60;</a></li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item"><a class="page-link" href="#">&#62;</a></li>
-                    </ul>
+                    <div>
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item d-none" id="primera"><a class="page-link" href="#">&#60;&#60;</a></li>
+                            <ul class="pagination justify-content-center" id="pagination">
+                            </ul>
+                            <li class="page-item" id="ultima"><a class="page-link" href="#">&#62;&#62;</a></li>
+                        </ul>
+                        
+                    </div>
+                    
                 </nav>
             </div>
 
